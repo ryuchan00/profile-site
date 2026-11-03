@@ -12,7 +12,6 @@ export type Content = {
   career: { heading: string; jobs: Job[] };
   education: { heading: string; items: Job[] };
   projects: { heading: string; items: Item[] };
-  archive: { heading: string; items: Item[] };
   skills: { heading: string; groups: { name: string; items: string }[] };
   certs: { heading: string; items: string[] };
   links: { heading: string; items: Link[] };
@@ -70,18 +69,12 @@ export const content: Record<Lang, Content> = {
     projects: {
       heading: "作ったもの",
       items: [
+        { title: "学園迷宮 | School Corridor", body: "無限に続く廃校の廊下で異変を見つけ、玄関を目指す短編ウォーキングシミュレーター（Unreal Engine 5）。2 人で制作し、Steam で無料公開（2025 年 8 月）。異変の大半（NavMesh で追ってくる敵、だるまさんがころんだ、演出のシーケンサー）、セーブ、ポーズ画面、デバッグ機能、Steam の実績、製品版ビルドの不具合修正を担当。", links: [{ label: "Steam", href: "https://store.steampowered.com/app/3935460/" }] },
         { title: "Xunit.SharedExamples", body: "RSpec の shared examples を xUnit.net v3 で書けるようにするライブラリ。NuGet で公開。", links: [{ label: "GitHub", href: repo("XunitSharedExamples") }] },
         { title: "ForbiddenChars", body: "紛らわしい文字（0/O、1/l）を拒否するプロパティを生成する C# のソースジェネレーター。NuGet で公開。", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
         { title: "Secure Coding Lab", body: "SQL インジェクションや XSS を体験して直す研修用アプリ。受講者ごとに実行環境を分け、20 人の同時利用を検証。", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。" },
-      ],
-    },
-    archive: {
-      heading: "過去の作品",
-      items: [
-        { title: "選択ソートのアニメーション（Siv3D）", body: "C++ でゲームを作る準備として、動きのあるものを Siv3D で作成。", links: [{ label: "GitHub", href: repo("SortAnimation") }] },
-        { title: "UE4 の FPS", body: "公式チュートリアルに、発砲音、2 段ジャンプ、ダッシュを追加。", links: [{ label: "GitHub", href: repo("FPS_test") }] },
       ],
     },
     skills: {
@@ -157,18 +150,12 @@ export const content: Record<Lang, Content> = {
     projects: {
       heading: "Projects",
       items: [
+        { title: "School Corridor (学園迷宮)", body: "A short walking simulator built with Unreal Engine 5: find anomalies in an endless school corridor and reach the exit. Made by two people and released free on Steam (August 2025, Japanese only). I built most of the anomalies (NavMesh-driven chasers, a red-light-green-light game, sequencer cutscenes), save data, the pause menu, debug tools, Steam achievements, and fixes for shipping builds.", links: [{ label: "Steam", href: "https://store.steampowered.com/app/3935460/" }] },
         { title: "Xunit.SharedExamples", body: "RSpec-style shared examples for xUnit.net v3. Published on NuGet.", links: [{ label: "GitHub", href: repo("XunitSharedExamples") }] },
         { title: "ForbiddenChars", body: "A C# source generator for properties that reject confusable characters such as 0/O and 1/l. Published on NuGet.", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
         { title: "Secure Coding Lab", body: "A hands-on training app for SQL injection and XSS. Each trainee gets an isolated environment; tested with 20 concurrent users.", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC." },
-      ],
-    },
-    archive: {
-      heading: "Earlier work",
-      items: [
-        { title: "Selection sort animation (Siv3D)", body: "A small animated program in C++ with Siv3D.", links: [{ label: "GitHub", href: repo("SortAnimation") }] },
-        { title: "FPS in UE4", body: "The official tutorial extended with gunshot sounds, double jump, and sprint.", links: [{ label: "GitHub", href: repo("FPS_test") }] },
       ],
     },
     skills: {
