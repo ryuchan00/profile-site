@@ -41,11 +41,11 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: "先に解いて、仕組みにして渡す",
-          body: "テストも Lint も CI もない状態から開発基盤を導入し、研修を企画して講師も務めました。Amazon Bedrock で社内向けの AI チャットを作り、職種を超えて使われています。",
+          body: "入社したとき、チームにはテストも Lint もフォーマッターも CI もなく、変更で既存の機能が壊れても気付きにくい状態でした。自動テストと CI を導入し、テストを書いたことのないメンバー向けに研修を企画して講師も務めました。不具合に早く気付けるようになり、既存の機能が壊れていないかの確認も楽になりました。また、ゲームの仕様についての質問が仕様を知る一部の人に集中し、資料も散らばっていて答えを探しにくい状態でした。そこで Amazon Bedrock で、仕様書やデザイン、ソースコード、マスターデータをもとに質問に答える社内向けの AI チャットを作りました。エンジニア以外の職種にも使われています。",
         },
         {
           title: "理由を持って技術を選ぶ",
-          body: "チーム全員が保守できるよう管理画面を Blazor に移し、DB マイグレーションは Atlas で差分の適用まで自動にしました。画像のサムネイルは CloudFront と Lambda で必要なときだけ作ります。",
+          body: "管理画面は Node.js で作られていて、触れる人がチームに一人しかいませんでした。チームが普段使う C# の Blazor に書き換え、全員が保守できるようにしました。DB のマイグレーション（テーブル定義の変更）は、以前は差分の SQL を出すところまでが自動で、その SQL の実行などは手作業でした。Atlas に移し、差分の検出から適用までを自動にしました。画像のサムネイルは、すべてを前もって作り置きするのをやめ、キャッシュにないときだけ CloudFront から Lambda を呼んで作る構成にしました。使われない画像のためにストレージや処理を用意せずに済みます。",
         },
         {
           title: "計測して性能を上げる",
@@ -57,7 +57,7 @@ export const content: Record<Lang, Content> = {
       heading: "職歴",
       jobs: [
         { period: "2025 –", org: "ゲーム会社", body: "ゲームのサーバーサイド開発と AWS インフラの設計、構築、運用。Terraform と GitHub Actions、テスト基盤の導入。" },
-        { period: "2017 – 2023", org: "GMOペパボ株式会社", body: "EC サイト構築サービス「カラーミーショップ」の開発。Ruby on Rails、API、機能追加と改修。" },
+        { period: "2017 – 2023", org: "GMOペパボ株式会社", body: "ネットショップを作って運営できるサービス「カラーミーショップ」で、サーバーサイドを中心に、フロントエンドも含めて機能の追加と改修を担当。外部の決済サービスとの連携（クラス設計と DB 設計を含む）、外部サイトとの OAuth 連携、REST API の作成と OpenAPI のスキーマによる入出力の検証、GitHub Actions の CI/CD の改善、Docker での開発環境づくりを行った。他事業部が試作したレコメンド機能を引き受け、新旧両方のシステムから使える API にまとめて製品化した。PHP、Ruby on Rails、MySQL。" },
         { period: "2016 – 2017", org: "株式会社シーベース", body: "クラウド型の社内評価システムの要件定義と機能改修。お客様の要望を聞いて提案。" },
         { period: "2013 – 2016", org: "SBSソリューション株式会社", body: "ホストコンピュータのプログラム開発と運用保守。" },
       ],
@@ -133,11 +133,11 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: "Solve first, then hand it over",
-          body: "I introduced tests, linting, and CI where none existed, and planned and taught the training. I built an internal AI chat on Amazon Bedrock that people across job roles now use.",
+          body: "When I joined, the team had no tests, linter, formatter, or CI, so it was hard to notice when a change broke existing features. I introduced automated tests and CI, and planned and taught a workshop for members who had never written tests. Bugs are now caught earlier, and checking that nothing else broke is much easier. Questions about the game's specifications also kept going to the few people who knew them, and the documents were too scattered to search. So I built an internal AI chat on Amazon Bedrock that answers questions from the specifications, designs, source code, and master data. People outside engineering use it too.",
         },
         {
           title: "Choose technology for a reason",
-          body: "I moved the admin console to Blazor so the whole team can maintain it, and adopted Atlas to automate applying database migrations. Thumbnails are generated on demand with CloudFront and Lambda.",
+          body: "The admin console was written in Node.js, and only one person on the team could work on it. I rewrote it in Blazor, using the C# the team already works in, so everyone can maintain it. Database migrations used to be automated only up to generating the diff SQL; running it was manual. I moved to Atlas, which detects and applies the diff automatically. For image thumbnails, instead of generating every size in advance, CloudFront calls Lambda to create one only when it is not in the cache, so no storage or processing is spent on images nobody views.",
         },
         {
           title: "Measure, then improve",
@@ -149,7 +149,7 @@ export const content: Record<Lang, Content> = {
       heading: "Experience",
       jobs: [
         { period: "2025 –", org: "Game company", body: "Server-side development and design, build, and operation of the AWS infrastructure. Introduced Terraform, GitHub Actions, and testing." },
-        { period: "2017 – 2023", org: "GMO Pepabo, Inc.", body: "Developed the e-commerce platform \"Color Me Shop\" with Ruby on Rails." },
+        { period: "2017 – 2023", org: "GMO Pepabo, Inc.", body: "Worked on \"Color Me Shop\", a service for building and running online stores, mainly on the server side and also on the front end. I integrated external payment services (including class and database design), added OAuth integration with external sites, built REST APIs with request and response validation against OpenAPI schemas, improved CI/CD on GitHub Actions, and set up Docker development environments. I also took over a recommendation feature prototyped by another division and shipped it as a single API usable from both the old and new systems. PHP, Ruby on Rails, MySQL." },
         { period: "2016 – 2017", org: "C-Base Inc.", body: "Requirements and feature work on a cloud-based employee review system. Proposed solutions based on customer requests." },
         { period: "2013 – 2016", org: "SBS Solutions Co., Ltd.", body: "Development and maintenance of mainframe programs." },
       ],
