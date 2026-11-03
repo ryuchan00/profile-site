@@ -16,7 +16,7 @@ resource "aws_iam_role" "deploy" {
         StringEquals = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
           # main ブランチからの実行だけを許可する
-          "token.actions.githubusercontent.com:sub" = "repo:${var.github_repository}:ref:refs/heads/main"
+          "token.actions.githubusercontent.com:sub" = "${var.github_oidc_sub_prefix}:ref:refs/heads/main"
         }
       }
     }]

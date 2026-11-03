@@ -9,10 +9,12 @@ variable "enable_custom_domain" {
   default     = false
 }
 
-variable "github_repository" {
-  description = "デプロイを許可する GitHub リポジトリ（owner/name）"
+# GitHub の不変の subject（use_immutable_subject）では、owner と repo の後ろに ID が付く。
+# 値は gh api repos/<owner>/<repo>/actions/oidc/customization/sub の sub_claim_prefix で確認できる
+variable "github_oidc_sub_prefix" {
+  description = "デプロイを許可する GitHub リポジトリの OIDC subject の接頭辞"
   type        = string
-  default     = "ryuchan00/profile-site"
+  default     = "repo:ryuchan00@19238591/profile-site@1443712159"
 }
 
 variable "budget_email" {
