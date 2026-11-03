@@ -69,6 +69,7 @@ export const content: Record<Lang, Content> = {
     projects: {
       heading: "作ったもの",
       items: [
+        { title: "学園迷宮 | School Corridor", body: "無限に続く廃校の廊下で異変を見つけ、玄関を目指す短編ウォーキングシミュレーター。チームで制作し、Steam で無料公開（2025 年 8 月）。", links: [{ label: "Steam", href: "https://store.steampowered.com/app/3935460/" }] },
         { title: "Xunit.SharedExamples", body: "RSpec の shared examples を xUnit.net v3 で書けるようにするライブラリ。NuGet で公開。", links: [{ label: "GitHub", href: repo("XunitSharedExamples") }] },
         { title: "ForbiddenChars", body: "紛らわしい文字（0/O、1/l）を拒否するプロパティを生成する C# のソースジェネレーター。NuGet で公開。", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
@@ -149,6 +150,7 @@ export const content: Record<Lang, Content> = {
     projects: {
       heading: "Projects",
       items: [
+        { title: "School Corridor (学園迷宮)", body: "A short walking simulator: find anomalies in an endless school corridor and reach the exit. Made with a team and released free on Steam (August 2025, Japanese only).", links: [{ label: "Steam", href: "https://store.steampowered.com/app/3935460/" }] },
         { title: "Xunit.SharedExamples", body: "RSpec-style shared examples for xUnit.net v3. Published on NuGet.", links: [{ label: "GitHub", href: repo("XunitSharedExamples") }] },
         { title: "ForbiddenChars", body: "A C# source generator for properties that reject confusable characters such as 0/O and 1/l. Published on NuGet.", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
