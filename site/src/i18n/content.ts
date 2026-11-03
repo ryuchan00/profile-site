@@ -74,6 +74,7 @@ export const content: Record<Lang, Content> = {
         { title: "ForbiddenChars", body: "紛らわしい文字（0/O、1/l）を拒否するプロパティを生成する C# のソースジェネレーター。NuGet で公開。", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
         { title: "Secure Coding Lab", body: "SQL インジェクションや XSS を体験して直す研修用アプリ。受講者ごとに実行環境を分け、20 人の同時利用を検証。", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
+        { title: "ユニットテスト研修", body: "テストダブルを知らない人を対象にした 2 時間の研修の教材（xUnit、.NET 10）。Assert から始めて、時間に依存するコードのテスト、テストダブルへと段階的に進む。研修を企画し、講師も担当。", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
         { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。" },
       ],
     },
@@ -93,6 +94,7 @@ export const content: Record<Lang, Content> = {
         "応用情報技術者（2024）",
         "LPIC Level 1（2018）",
         "基本情報技術者（2016）",
+        "日商簿記検定 2 級（2010）",
       ],
     },
     links: {
@@ -155,6 +157,7 @@ export const content: Record<Lang, Content> = {
         { title: "ForbiddenChars", body: "A C# source generator for properties that reject confusable characters such as 0/O and 1/l. Published on NuGet.", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
         { title: "Secure Coding Lab", body: "A hands-on training app for SQL injection and XSS. Each trainee gets an isolated environment; tested with 20 concurrent users.", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
+        { title: "Unit testing workshop", body: "Materials for a two-hour workshop (xUnit, .NET 10) for people new to test doubles. It goes step by step from assertions to time-dependent code and test doubles. I planned the workshop and taught it.", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
         { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC." },
       ],
     },
@@ -174,6 +177,7 @@ export const content: Record<Lang, Content> = {
         "Applied Information Technology Engineer (2024)",
         "LPIC Level 1 (2018)",
         "Fundamental Information Technology Engineer (2016)",
+        "Japan Chamber of Commerce Bookkeeping Test, Grade 2 (2010)",
       ],
     },
     links: {
