@@ -11,6 +11,7 @@ export type Content = {
   strengths: { heading: string; items: Item[] };
   career: { heading: string; jobs: Job[] };
   education: { heading: string; items: Job[] };
+  publications: { heading: string; items: Item[] };
   projects: { heading: string; items: Item[] };
   skills: { heading: string; groups: { name: string; items: string }[] };
   certs: { heading: string; items: string[] };
@@ -20,6 +21,8 @@ export type Content = {
 const GITHUB = "https://github.com/ryuchan00";
 const BLOG = "https://leokun0210.hatenablog.com/";
 const repo = (name: string) => `${GITHUB}/${name}`;
+const DEIM2025 = "https://pub.confit.atlas.jp/ja/event/deim2025/presentation/4D-01";
+const FIT2024 = "https://www.ieice.org/publications/conference-FIT-DVDs/FIT2024/data/html/program/pdf/D-011.pdf";
 
 export const content: Record<Lang, Content> = {
   ja: {
@@ -66,6 +69,14 @@ export const content: Record<Lang, Content> = {
         { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究：動的に変化する多重集合に対する Min-Hash の空間計算量の削減。" },
       ],
     },
+    publications: {
+      heading: "研究発表",
+      items: [
+        { title: "異周期カウンタと挿入遅延によるデータストリームに対する頻度クエリの精度向上", body: "山川 竜太郎、古賀 久志。DEIM2025（第17回データ工学と情報マネジメントに関するフォーラム）、2025 年。ロングペーパー、口頭発表とインタラクティブ（ポスター）発表。修士論文の研究。", links: [{ label: "講演情報と論文", href: DEIM2025 }] },
+        { title: "異周期カウンタを用いたスライディングウィンドウ型ストリームに対する頻度クエリの精度向上", body: "山川 竜太郎、古賀 久志。FIT2024（第23回情報科学技術フォーラム）、2024 年。口頭発表。", links: [{ label: "予稿（PDF）", href: FIT2024 }] },
+        { title: "動的に変化する多重集合に対する Min-Hash の空間計算量の削減", body: "卒業論文（2023 年）。C++ で実装して実験。", links: [{ label: "ソースコード", href: repo("Minlist") }] },
+      ],
+    },
     projects: {
       heading: "作ったもの",
       items: [
@@ -74,6 +85,7 @@ export const content: Record<Lang, Content> = {
         { title: "ForbiddenChars", body: "紛らわしい文字（0/O、1/l）を拒否するプロパティを生成する C# のソースジェネレーター。NuGet で公開。", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
         { title: "Secure Coding Lab", body: "SQL インジェクションや XSS を体験して直す研修用アプリ。受講者ごとに実行環境を分け、20 人の同時利用を検証。", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
+        { title: "ユニットテスト研修", body: "テストダブルを知らない人を対象にした 2 時間の研修の教材（xUnit、.NET 10）。Assert から始めて、時間に依存するコードのテスト、テストダブルへと段階的に進む。研修を企画し、講師も担当。", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
         { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。" },
       ],
     },
@@ -93,6 +105,8 @@ export const content: Record<Lang, Content> = {
         "応用情報技術者（2024）",
         "LPIC Level 1（2018）",
         "基本情報技術者（2016）",
+        "日商簿記検定 2 級（2010）",
+        "税理士試験 財務諸表論 科目合格（2011）",
       ],
     },
     links: {
@@ -147,6 +161,14 @@ export const content: Record<Lang, Content> = {
         { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "Thesis: reducing the space complexity of Min-Hash for dynamic multisets." },
       ],
     },
+    publications: {
+      heading: "Publications",
+      items: [
+        { title: "Improving Frequency Queries for Sliding Window Streams via Different Cycle Counters and Delay Insertions", body: "Ryutaro Yamakawa, Hisashi Koga. DEIM2025 (in Japanese), long paper with oral and interactive (poster) presentations. Research for my master's thesis.", links: [{ label: "Paper", href: DEIM2025 }] },
+        { title: "Improving Frequency Queries for Sliding Window Streams with Different Cycle Counters", body: "Ryutaro Yamakawa, Hisashi Koga. FIT2024 (in Japanese), oral presentation.", links: [{ label: "Paper (PDF)", href: FIT2024 }] },
+        { title: "Reducing the Space Complexity of Min-Hash for Dynamic Multisets", body: "Bachelor's thesis (2023, in Japanese). Implemented and evaluated in C++.", links: [{ label: "Source code", href: repo("Minlist") }] },
+      ],
+    },
     projects: {
       heading: "Projects",
       items: [
@@ -155,6 +177,7 @@ export const content: Record<Lang, Content> = {
         { title: "ForbiddenChars", body: "A C# source generator for properties that reject confusable characters such as 0/O and 1/l. Published on NuGet.", links: [{ label: "GitHub", href: repo("ForbiddenChars") }] },
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
         { title: "Secure Coding Lab", body: "A hands-on training app for SQL injection and XSS. Each trainee gets an isolated environment; tested with 20 concurrent users.", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
+        { title: "Unit testing workshop", body: "Materials for a two-hour workshop (xUnit, .NET 10) for people new to test doubles. It goes step by step from assertions to time-dependent code and test doubles. I planned the workshop and taught it.", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
         { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC." },
       ],
     },
@@ -174,6 +197,8 @@ export const content: Record<Lang, Content> = {
         "Applied Information Technology Engineer (2024)",
         "LPIC Level 1 (2018)",
         "Fundamental Information Technology Engineer (2016)",
+        "Japan Chamber of Commerce Bookkeeping Test, Grade 2 (2010)",
+        "Certified Tax Accountant Examination: Financial Statements (2011)",
       ],
     },
     links: {
