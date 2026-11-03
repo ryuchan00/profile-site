@@ -3,6 +3,12 @@ variable "domain_name" {
   type        = string
 }
 
+variable "enable_custom_domain" {
+  description = "証明書の検証用レコードを DNS に登録し終えたら true にする。false の間は CloudFront の既定のドメインで配信する"
+  type        = bool
+  default     = false
+}
+
 variable "github_repository" {
   description = "デプロイを許可する GitHub リポジトリ（owner/name）"
   type        = string
