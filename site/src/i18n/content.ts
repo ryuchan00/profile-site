@@ -41,11 +41,11 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: "先に解いて、仕組みにして渡す",
-          body: "テストも Lint も CI もない状態から開発基盤を導入し、研修を企画して講師も務めました。Amazon Bedrock で社内向けの AI チャットを作り、職種を超えて使われています。",
+          body: "入社したとき、チームにはテストも Lint もフォーマッターも CI もなく、今のアプリケーション開発では当たり前の土台がありませんでした。変更で既存の機能が壊れても気付きにくい状態でした。自動テストと CI を導入し、テストを書いたことのないメンバー向けに研修を企画して講師も務めました。不具合に早く気付けるようになり、既存の機能が壊れていないかの確認も楽になりました。また、ゲームの仕様についての質問が仕様を知る一部の人に集中し、資料も散らばっていて答えを探しにくい状態でした。そこで Amazon Bedrock で、仕様書やデザイン、ソースコード、マスターデータをもとに質問に答える社内向けの AI チャットを作りました。エンジニア以外の職種にも使われています。",
         },
         {
           title: "理由を持って技術を選ぶ",
-          body: "チーム全員が保守できるよう管理画面を Blazor に移し、DB マイグレーションは Atlas で差分の適用まで自動にしました。画像のサムネイルは CloudFront と Lambda で必要なときだけ作ります。",
+          body: "ゲームサーバーは .NET（C#）で書かれている一方、管理画面だけが Next.js で作られていました。社内には Next.js や JavaScript を扱える人がほとんどおらず、管理画面の保守にかかる手間が大きすぎました。そこで、ゲームサーバーと同じ C# で書ける Blazor に書き換え、チーム全員が保守できるようにしました。DB のマイグレーション（テーブル定義の変更）は、以前は差分の SQL を出すところまでが自動で、その SQL の実行などは手作業でした。Atlas に移し、差分の検出から適用までを自動にしました。画像のサムネイルは、すべてを前もって作り置きするのをやめ、キャッシュにないときだけ CloudFront から Lambda を呼んで作る構成にしました。使われない画像のためにストレージや処理を用意せずに済みます。",
         },
         {
           title: "計測して性能を上げる",
@@ -57,16 +57,16 @@ export const content: Record<Lang, Content> = {
       heading: "職歴",
       jobs: [
         { period: "2025 –", org: "ゲーム会社", body: "ゲームのサーバーサイド開発と AWS インフラの設計、構築、運用。Terraform と GitHub Actions、テスト基盤の導入。" },
-        { period: "2017 – 2023", org: "GMOペパボ株式会社", body: "EC サイト構築サービス「カラーミーショップ」の開発。Ruby on Rails、API、機能追加と改修。" },
-        { period: "2016 – 2017", org: "株式会社シーベース", body: "クラウド型の社内評価システムの要件定義と機能改修。お客様の要望を聞いて提案。" },
-        { period: "2013 – 2016", org: "SBSソリューション株式会社", body: "ホストコンピュータのプログラム開発と運用保守。" },
+        { period: "2017 – 2023", org: "GMOペパボ株式会社", body: "ネットショップを作って運営できるサービス「カラーミーショップ」で、サーバーサイドを中心に、フロントエンドも含めて機能の追加と改修を担当。外部の決済サービスとの連携（クラス設計と DB 設計を含む）、外部サイトとの OAuth 連携、REST API の作成と OpenAPI のスキーマによる入出力の検証、GitHub Actions の CI/CD の改善、Docker での開発環境づくりを行った。他事業部が試作したレコメンド機能を引き受け、新旧両方のシステムから使える API にまとめて製品化した。PHP、Ruby on Rails、MySQL。" },
+        { period: "2016 – 2017", org: "クラウド型サーベイシステムの開発会社", body: "企業向けの社内 360 度評価システムで、要件定義と機能の追加、改修を担当。お客様との定例会議で要望を聞き取り、改修内容を提案した。PHP、MySQL。" },
+        { period: "2013 – 2016", org: "技術者派遣の会社", body: "大手印刷会社に常駐し、ダイレクトメールや支払い用紙などの帳票を自動で印刷するプログラムの開発と運用保守を担当。メインフレーム（COBOL、JCL）と Windows のバッチ処理。" },
       ],
     },
     education: {
       heading: "学歴",
       items: [
-        { period: "2023 – 2025", org: "電気通信大学大学院 情報理工学研究科 博士前期課程 修了", body: "データストリームのスケッチ（Sliding Sketch）の研究。" },
-        { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究：動的に変化する多重集合に対する Min-Hash の空間計算量の削減。" },
+        { period: "2023 – 2025", org: "電気通信大学大学院 情報理工学研究科 博士前期課程 修了", body: "センサーやアクセスログのように絶えず流れてくる大量のデータを、すべては保存せず、少ないメモリで集計する手法（スケッチ）を研究。「直近の一定時間に、ある値が何回現れたか」を見積もる既存の手法（Sliding Sketch）について、見積もりの誤差を小さくする方法を提案した。" },
+        { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究では、2 つのデータの集まりがどれだけ似ているかを素早く見積もる手法（Min-Hash）を扱った。中身が増えたり減ったりするデータでも、少ないメモリで使えるようにした。" },
       ],
     },
     publications: {
@@ -133,11 +133,11 @@ export const content: Record<Lang, Content> = {
       items: [
         {
           title: "Solve first, then hand it over",
-          body: "I introduced tests, linting, and CI where none existed, and planned and taught the training. I built an internal AI chat on Amazon Bedrock that people across job roles now use.",
+          body: "When I joined, the team had no tests, linter, formatter, or CI, none of the basics of modern application development, so it was hard to notice when a change broke existing features. I introduced automated tests and CI, and planned and taught a workshop for members who had never written tests. Bugs are now caught earlier, and checking that nothing else broke is much easier. Questions about the game's specifications also kept going to the few people who knew them, and the documents were too scattered to search. So I built an internal AI chat on Amazon Bedrock that answers questions from the specifications, designs, source code, and master data. People outside engineering use it too.",
         },
         {
           title: "Choose technology for a reason",
-          body: "I moved the admin console to Blazor so the whole team can maintain it, and adopted Atlas to automate applying database migrations. Thumbnails are generated on demand with CloudFront and Lambda.",
+          body: "The game server is written in .NET (C#), but the admin console alone was built with Next.js, and almost no one in the company could work with Next.js or JavaScript, so maintaining it cost far too much. I rewrote it in Blazor, in the same C# as the game server, so the whole team can maintain it. Database migrations used to be automated only up to generating the diff SQL; running it was manual. I moved to Atlas, which detects and applies the diff automatically. For image thumbnails, instead of generating every size in advance, CloudFront calls Lambda to create one only when it is not in the cache, so no storage or processing is spent on images nobody views.",
         },
         {
           title: "Measure, then improve",
@@ -149,16 +149,16 @@ export const content: Record<Lang, Content> = {
       heading: "Experience",
       jobs: [
         { period: "2025 –", org: "Game company", body: "Server-side development and design, build, and operation of the AWS infrastructure. Introduced Terraform, GitHub Actions, and testing." },
-        { period: "2017 – 2023", org: "GMO Pepabo, Inc.", body: "Developed the e-commerce platform \"Color Me Shop\" with Ruby on Rails." },
-        { period: "2016 – 2017", org: "C-Base Inc.", body: "Requirements and feature work on a cloud-based employee review system. Proposed solutions based on customer requests." },
-        { period: "2013 – 2016", org: "SBS Solutions Co., Ltd.", body: "Development and maintenance of mainframe programs." },
+        { period: "2017 – 2023", org: "GMO Pepabo, Inc.", body: "Worked on \"Color Me Shop\", a service for building and running online stores, mainly on the server side and also on the front end. I integrated external payment services (including class and database design), added OAuth integration with external sites, built REST APIs with request and response validation against OpenAPI schemas, improved CI/CD on GitHub Actions, and set up Docker development environments. I also took over a recommendation feature prototyped by another division and shipped it as a single API usable from both the old and new systems. PHP, Ruby on Rails, MySQL." },
+        { period: "2016 – 2017", org: "Cloud survey software company", body: "Requirements, new features, and fixes for a 360-degree employee review system for businesses. I attended regular meetings with customers, gathered their requests, and proposed changes. PHP, MySQL." },
+        { period: "2013 – 2016", org: "IT staffing company", body: "On site at a major printing company, developed and maintained programs that automatically print business forms such as direct mail and payment slips. Mainframe (COBOL, JCL) and Windows batch processing." },
       ],
     },
     education: {
       heading: "Education",
       items: [
-        { period: "2023 – 2025", org: "M.Eng., The University of Electro-Communications", body: "Research on data stream sketches (Sliding Sketch)." },
-        { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "Thesis: reducing the space complexity of Min-Hash for dynamic multisets." },
+        { period: "2023 – 2025", org: "M.Eng., The University of Electro-Communications", body: "Researched sketches: compact summaries that count huge, never-ending data such as sensor readings and access logs without storing all of it. I proposed ways to reduce the error of Sliding Sketch, an existing method that estimates how many times an item appeared in the most recent time window." },
+        { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "My thesis was on Min-Hash, a technique for quickly estimating how similar two collections of data are. I made it work with less memory even when items are added and removed." },
       ],
     },
     publications: {
