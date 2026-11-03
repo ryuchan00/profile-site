@@ -11,6 +11,7 @@ resource "aws_acm_certificate" "site" {
 }
 
 resource "aws_acm_certificate_validation" "site" {
+  count           = var.enable_custom_domain ? 1 : 0
   provider        = aws.us_east_1
   certificate_arn = aws_acm_certificate.site.arn
 
