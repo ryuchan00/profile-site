@@ -1,0 +1,10 @@
+node_modules/
+site/dist/
+site/.astro/
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+backend.hcl
+!example.tfvars
+.terraform.tfstate.lock.info
