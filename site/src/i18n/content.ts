@@ -8,7 +8,6 @@ export type Content = {
   meta: { title: string; description: string };
   nav: { otherLang: Link };
   hero: { name: string; role: string; lead: string };
-  strengths: { heading: string; items: Item[] };
   career: { heading: string; jobs: Job[] };
   education: { heading: string; items: Job[] };
   publications: { heading: string; items: Item[] };
@@ -33,25 +32,8 @@ export const content: Record<Lang, Content> = {
     nav: { otherLang: { label: "English", href: "/en/" } },
     hero: {
       name: "山川 竜太郎",
-      role: "サーバーサイド / AWS エンジニア",
+      role: "Software Engineer",
       lead: "ゲーム会社で、AWS のインフラとアプリケーションの両方を少人数で担っています。先に自分で問題を解き、仕組みにして、チームが使える形で渡すのが得意です。",
-    },
-    strengths: {
-      heading: "強み",
-      items: [
-        {
-          title: "先に解いて、仕組みにして渡す",
-          body: "入社したとき、チームにはテストも Lint もフォーマッターも CI もなく、今のアプリケーション開発では当たり前の土台がありませんでした。変更で既存の機能が壊れても気付きにくい状態でした。自動テストと CI を導入し、テストを書いたことのないメンバー向けに研修を企画して講師も務めました。不具合に早く気付けるようになり、既存の機能が壊れていないかの確認も楽になりました。また、ゲームの仕様についての質問が仕様を知る一部の人に集中し、資料も散らばっていて答えを探しにくい状態でした。そこで Amazon Bedrock で、仕様書やデザイン、ソースコード、マスターデータをもとに質問に答える社内向けの AI チャットを作りました。エンジニア以外の職種にも使われています。",
-        },
-        {
-          title: "理由を持って技術を選ぶ",
-          body: "ゲームサーバーは .NET（C#）で書かれている一方、管理画面だけが Next.js で作られていました。社内には Next.js や JavaScript を扱える人がほとんどおらず、管理画面の保守にかかる手間が大きすぎました。そこで、ゲームサーバーと同じ C# で書ける Blazor に書き換え、チーム全員が保守できるようにしました。DB のマイグレーション（テーブル定義の変更）は、以前は差分の SQL を出すところまでが自動で、その SQL の実行などは手作業でした。Atlas に移し、差分の検出から適用までを自動にしました。画像のサムネイルは、すべてを前もって作り置きするのをやめ、キャッシュにないときだけ CloudFront から Lambda を呼んで作る構成にしました。使われない画像のためにストレージや処理を用意せずに済みます。",
-        },
-        {
-          title: "計測して性能を上げる",
-          body: "「遅い」と言われても、どこがどのくらい遅いのかを客観的に示せず、感覚に頼っている状態でした。APM を導入して処理ごとにかかる時間を測れるようにし、定期的に確かめて、遅くなっていないことを数字で示せるようにしました。負荷テストでは、チーム全員が同じ知識を持って進められるよう、AWS の負荷試験の本を 4 人で読む読書会を企画し、テストの計画とシナリオのレビューを担当しました。ISUCON2026 でも、計測をもとに改善を重ねました。",
-        },
-      ],
     },
     career: {
       heading: "職歴",
@@ -125,25 +107,8 @@ export const content: Record<Lang, Content> = {
     nav: { otherLang: { label: "日本語", href: "/" } },
     hero: {
       name: "Ryutaro Yamakawa",
-      role: "Server-side / AWS Engineer",
+      role: "Software Engineer",
       lead: "At a game company, I handle both the AWS infrastructure and the applications with a small team. I like to solve a problem first, turn the solution into a system, and hand it over in a form the team can use.",
-    },
-    strengths: {
-      heading: "Strengths",
-      items: [
-        {
-          title: "Solve first, then hand it over",
-          body: "When I joined, the team had no tests, linter, formatter, or CI, none of the basics of modern application development, so it was hard to notice when a change broke existing features. I introduced automated tests and CI, and planned and taught a workshop for members who had never written tests. Bugs are now caught earlier, and checking that nothing else broke is much easier. Questions about the game's specifications also kept going to the few people who knew them, and the documents were too scattered to search. So I built an internal AI chat on Amazon Bedrock that answers questions from the specifications, designs, source code, and master data. People outside engineering use it too.",
-        },
-        {
-          title: "Choose technology for a reason",
-          body: "The game server is written in .NET (C#), but the admin console alone was built with Next.js, and almost no one in the company could work with Next.js or JavaScript, so maintaining it cost far too much. I rewrote it in Blazor, in the same C# as the game server, so the whole team can maintain it. Database migrations used to be automated only up to generating the diff SQL; running it was manual. I moved to Atlas, which detects and applies the diff automatically. For image thumbnails, instead of generating every size in advance, CloudFront calls Lambda to create one only when it is not in the cache, so no storage or processing is spent on images nobody views.",
-        },
-        {
-          title: "Measure, then improve",
-          body: "When someone said the game was slow, nobody could show objectively where or how slow; we relied on gut feeling. I introduced APM so the time spent in each operation is measured, and we check it regularly to show with numbers that nothing has gotten slower. For load testing, I organized a four-person reading group on a book about load testing on AWS so the whole team shared the same knowledge, and I reviewed the test plan and scenarios. At ISUCON2026, too, I improved the application step by step based on measurements.",
-        },
-      ],
     },
     career: {
       heading: "Experience",
