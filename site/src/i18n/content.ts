@@ -12,7 +12,6 @@ export type Content = {
   career: { heading: string; jobs: Job[] };
   education: { heading: string; items: Job[] };
   projects: { heading: string; items: Item[] };
-  archive: { heading: string; items: Item[] };
   skills: { heading: string; groups: { name: string; items: string }[] };
   certs: { heading: string; items: string[] };
   links: { heading: string; items: Link[] };
@@ -75,13 +74,6 @@ export const content: Record<Lang, Content> = {
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
         { title: "Secure Coding Lab", body: "SQL インジェクションや XSS を体験して直す研修用アプリ。受講者ごとに実行環境を分け、20 人の同時利用を検証。", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。" },
-      ],
-    },
-    archive: {
-      heading: "過去の作品",
-      items: [
-        { title: "選択ソートのアニメーション（Siv3D）", body: "C++ でゲームを作る準備として、動きのあるものを Siv3D で作成。", links: [{ label: "GitHub", href: repo("SortAnimation") }] },
-        { title: "UE4 の FPS", body: "公式チュートリアルに、発砲音、2 段ジャンプ、ダッシュを追加。", links: [{ label: "GitHub", href: repo("FPS_test") }] },
       ],
     },
     skills: {
@@ -162,13 +154,6 @@ export const content: Record<Lang, Content> = {
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
         { title: "Secure Coding Lab", body: "A hands-on training app for SQL injection and XSS. Each trainee gets an isolated environment; tested with 20 concurrent users.", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC." },
-      ],
-    },
-    archive: {
-      heading: "Earlier work",
-      items: [
-        { title: "Selection sort animation (Siv3D)", body: "A small animated program in C++ with Siv3D.", links: [{ label: "GitHub", href: repo("SortAnimation") }] },
-        { title: "FPS in UE4", body: "The official tutorial extended with gunshot sounds, double jump, and sprint.", links: [{ label: "GitHub", href: repo("FPS_test") }] },
       ],
     },
     skills: {
