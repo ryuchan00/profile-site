@@ -17,10 +17,13 @@ DNS はムームーDNS で管理する。Route 53 は使わない。
 2. `infra/main/backend.hcl` に `bucket = "<state_bucket>"` と書く（Git に入れない）。
 3. `infra/main/example.tfvars` を `terraform.tfvars` にコピーし、ドメインとメールアドレスを入れる。
 4. `infra/main` で `terraform init -backend-config=backend.hcl` を実行する。
-5. 先に証明書だけを作る：`terraform apply -target=aws_acm_certificate.site`。続けて `terraform output certificate_validation_records` で出る CNAME をムームーDNS に登録する。
-6. 残りを作る：`terraform apply`。証明書の検証が通るまで待ってから CloudFront が作られる。
-7. サイトのドメインの CNAME を、出力の `cloudfront_domain` に向ける。
-8. GitHub リポジトリの Variables に `DEPLOY_ROLE_ARN`、`SITE_BUCKET`、`DISTRIBUTION_ID` を登録する。
+5. `terraform apply` で全体を作る。`enable_custom_domain` が `false` の間は、CloudFront の既定のドメイン（出力の `cloudfront_domain`）で配信する。
+6. `terraform output certificate_validation_records` で出る CNAME をムームーDNS に登録する。
+7. 証明書が「発行済み」になったら、`terraform.tfvars` に `enable_custom_domain = true` を足して `terraform apply` する。
+8. サイトのドメインの CNAME を、出力の `cloudfront_domain` に向ける。
+
+`aws login` の認証情報は Terraform 1.9 の S3 backend が読めないので、実行前に `export AWS_REGION=ap-northeast-1; eval "$(aws configure export-credentials --format env)"` で環境変数に出す。
+9. GitHub リポジトリの Variables に `DEPLOY_ROLE_ARN`、`SITE_BUCKET`、`DISTRIBUTION_ID` を登録する。
 
 ## 手元での確認
 

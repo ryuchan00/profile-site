@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import Profile from "../../components/Profile.astro";
+import { content } from "../../i18n/content";
+
+const { meta } = content.en;
+---
+
+<Base lang="en" title={meta.title} description={meta.description}>
+  <Profile lang="en" />
+</Base>

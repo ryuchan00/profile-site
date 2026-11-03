@@ -1,0 +1,181 @@
+---
+import { content, type Lang } from "../i18n/content";
+
+interface Props {
+  lang: Lang;
+}
+
+const c = content[Astro.props.lang];
+---
+
+<main>
+  <nav><a href={c.nav.otherLang.href} hreflang={c.nav.otherLang.href === "/" ? "ja" : "en"}>{c.nav.otherLang.label}</a></nav>
+
+  <header>
+    <h1>{c.hero.name}</h1>
+    <p class="role">{c.hero.role}</p>
+    <p>{c.hero.lead}</p>
+  </header>
+
+  <section>
+    <h2>{c.strengths.heading}</h2>
+    <div class="cards">
+      {c.strengths.items.map((s) => (
+        <article>
+          <h3>{s.title}</h3>
+          <p>{s.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  {[c.career, { heading: c.education.heading, jobs: c.education.items }].map((block) => (
+    <section>
+      <h2>{block.heading}</h2>
+      <ol class="timeline">
+        {block.jobs.map((j) => (
+          <li>
+            <span class="period">{j.period}</span>
+            <div>
+              <strong>{j.org}</strong>
+              <p>{j.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+
+  {[c.projects, c.archive].map((block) => (
+    <section>
+      <h2>{block.heading}</h2>
+      <ul class="list">
+        {block.items.map((p) => (
+          <li>
+            <strong>{p.title}</strong>
+            <p>{p.body}</p>
+            {p.links && (
+              <p class="links">
+                {p.links.map((l) => <a href={l.href}>{l.label}</a>)}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <section>
+    <h2>{c.skills.heading}</h2>
+    <dl class="skills">
+      {c.skills.groups.map((g) => (
+        <>
+          <dt>{g.name}</dt>
+          <dd>{g.items}</dd>
+        </>
+      ))}
+    </dl>
+  </section>
+
+  <section>
+    <h2>{c.certs.heading}</h2>
+    <ul>
+      {c.certs.items.map((x) => <li>{x}</li>)}
+    </ul>
+  </section>
+
+  <section>
+    <h2>{c.links.heading}</h2>
+    <p class="links">
+      {c.links.items.map((l) => <a href={l.href}>{l.label}</a>)}
+    </p>
+  </section>
+</main>
+
+<style>
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 64px;
+  }
+  nav {
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  header h1 {
+    margin: 24px 0 0;
+    font-size: 2rem;
+  }
+  .role {
+    margin: 0;
+    color: var(--muted);
+  }
+  section {
+    margin-top: 40px;
+  }
+  h2 {
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+  }
+  h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+  }
+  .cards {
+    display: grid;
+    gap: 12px;
+  }
+  .cards article {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .cards p,
+  .list p,
+  .timeline p {
+    margin: 0;
+  }
+  .timeline,
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 7.5em 1fr;
+    gap: 12px;
+    padding: 8px 0;
+  }
+  .period {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .list li {
+    padding: 8px 0;
+  }
+  .links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: 7.5em 1fr;
+    gap: 4px 12px;
+  }
+  .skills dt {
+    color: var(--muted);
+  }
+  .skills dd {
+    margin: 0;
+  }
+  @media (max-width: 520px) {
+    .timeline li,
+    .skills {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+</style>
