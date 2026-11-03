@@ -46,7 +46,7 @@ const c = content[Astro.props.lang];
     </section>
   ))}
 
-  {[c.projects].map((block) => (
+  {[c.publications, c.projects].map((block) => (
     <section>
       <h2>{block.heading}</h2>
       <ul class="list">
