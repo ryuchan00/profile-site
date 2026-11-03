@@ -65,8 +65,8 @@ export const content: Record<Lang, Content> = {
     education: {
       heading: "学歴",
       items: [
-        { period: "2023 – 2025", org: "電気通信大学大学院 情報理工学研究科 博士前期課程 修了", body: "データストリームのスケッチ（Sliding Sketch）の研究。" },
-        { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究：動的に変化する多重集合に対する Min-Hash の空間計算量の削減。" },
+        { period: "2023 – 2025", org: "電気通信大学大学院 情報理工学研究科 博士前期課程 修了", body: "センサーやアクセスログのように絶えず流れてくる大量のデータを、すべては保存せず、少ないメモリで集計する手法（スケッチ）を研究。「直近の一定時間に、ある値が何回現れたか」を見積もる既存の手法（Sliding Sketch）について、見積もりの誤差を小さくする方法を提案した。" },
+        { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究では、2 つのデータの集まりがどれだけ似ているかを素早く見積もる手法（Min-Hash）を扱った。中身が増えたり減ったりするデータでも、少ないメモリで使えるようにした。" },
       ],
     },
     publications: {
@@ -157,8 +157,8 @@ export const content: Record<Lang, Content> = {
     education: {
       heading: "Education",
       items: [
-        { period: "2023 – 2025", org: "M.Eng., The University of Electro-Communications", body: "Research on data stream sketches (Sliding Sketch)." },
-        { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "Thesis: reducing the space complexity of Min-Hash for dynamic multisets." },
+        { period: "2023 – 2025", org: "M.Eng., The University of Electro-Communications", body: "Researched sketches: compact summaries that count huge, never-ending data such as sensor readings and access logs without storing all of it. I proposed ways to reduce the error of Sliding Sketch, an existing method that estimates how many times an item appeared in the most recent time window." },
+        { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "My thesis was on Min-Hash, a technique for quickly estimating how similar two collections of data are. I made it work with less memory even when items are added and removed." },
       ],
     },
     publications: {
