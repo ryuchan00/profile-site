@@ -49,7 +49,7 @@ export const content: Record<Lang, Content> = {
         },
         {
           title: "計測して性能を上げる",
-          body: "APM を導入し、負荷テストを計画して実施しました。ISUCON2026 では計測をもとに改善を重ねました。",
+          body: "「遅い」と言われても、どこがどのくらい遅いのかを客観的に示せず、感覚に頼っている状態でした。APM を導入して処理ごとにかかる時間を測れるようにし、定期的に確かめて、遅くなっていないことを数字で示せるようにしました。負荷テストでは、チーム全員が同じ知識を持って進められるよう、AWS の負荷試験の本を 4 人で読む読書会を企画し、テストの計画とシナリオのレビューを担当しました。ISUCON2026 でも、計測をもとに改善を重ねました。",
         },
       ],
     },
@@ -86,7 +86,7 @@ export const content: Record<Lang, Content> = {
         { title: "tmux-pane-beacon", body: "tmux のペインに色とコーディングエージェントの状態を表示するプラグイン（Rust、Shell）。", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }, { label: "紹介記事", href: `${BLOG}entry/tmux-pane-beacon` }] },
         { title: "Secure Coding Lab", body: "SQL インジェクションや XSS を体験して直す研修用アプリ。受講者ごとに実行環境を分け、20 人の同時利用を検証。", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "ユニットテスト研修", body: "テストダブルを知らない人を対象にした 2 時間の研修の教材（xUnit、.NET 10）。Assert から始めて、時間に依存するコードのテスト、テストダブルへと段階的に進む。研修を企画し、講師も担当。", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
-        { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。" },
+        { title: "このサイト", body: "Astro で作り、S3 と CloudFront で配信。インフラは Terraform、公開は GitHub Actions（OIDC）で自動化。", links: [{ label: "GitHub", href: repo("profile-site") }] },
       ],
     },
     skills: {
@@ -141,7 +141,7 @@ export const content: Record<Lang, Content> = {
         },
         {
           title: "Measure, then improve",
-          body: "I introduced APM and planned and ran load tests. At ISUCON2026 I improved the application step by step based on measurements.",
+          body: "When someone said the game was slow, nobody could show objectively where or how slow; we relied on gut feeling. I introduced APM so the time spent in each operation is measured, and we check it regularly to show with numbers that nothing has gotten slower. For load testing, I organized a four-person reading group on a book about load testing on AWS so the whole team shared the same knowledge, and I reviewed the test plan and scenarios. At ISUCON2026, too, I improved the application step by step based on measurements.",
         },
       ],
     },
@@ -178,7 +178,7 @@ export const content: Record<Lang, Content> = {
         { title: "tmux-pane-beacon", body: "A tmux plugin that colors each pane and shows coding-agent status (Rust, Shell).", links: [{ label: "GitHub", href: repo("tmux-pane-beacon") }] },
         { title: "Secure Coding Lab", body: "A hands-on training app for SQL injection and XSS. Each trainee gets an isolated environment; tested with 20 concurrent users.", links: [{ label: "GitHub", href: repo("secure-coding-lab") }] },
         { title: "Unit testing workshop", body: "Materials for a two-hour workshop (xUnit, .NET 10) for people new to test doubles. It goes step by step from assertions to time-dependent code and test doubles. I planned the workshop and taught it.", links: [{ label: "GitHub", href: repo("xUnit_practice") }] },
-        { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC." },
+        { title: "This site", body: "Built with Astro and served from S3 and CloudFront. Infrastructure in Terraform, deployed by GitHub Actions with OIDC.", links: [{ label: "GitHub", href: repo("profile-site") }] },
       ],
     },
     skills: {
