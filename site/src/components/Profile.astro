@@ -26,7 +26,7 @@ const c = content[Astro.props.lang];
             <span class="period">{j.period}</span>
             <div>
               <strong>{j.org}</strong>
-              <p>{j.body}</p>
+              {j.body && <p>{j.body}</p>}
             </div>
           </li>
         ))}

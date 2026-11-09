@@ -2,7 +2,7 @@ export type Lang = "ja" | "en";
 
 type Link = { label: string; href: string };
 type Item = { title: string; body: string; links?: Link[] };
-type Job = { period: string; org: string; body: string };
+type Job = { period: string; org: string; body?: string };
 
 export type Content = {
   meta: { title: string; description: string };
@@ -49,6 +49,7 @@ export const content: Record<Lang, Content> = {
       items: [
         { period: "2023 – 2025", org: "電気通信大学大学院 情報理工学研究科 博士前期課程 修了", body: "センサーやアクセスログのように絶えず流れてくる大量のデータを、すべては保存せず、少ないメモリで集計する手法（スケッチ）を研究。「直近の一定時間に、ある値が何回現れたか」を見積もる既存の手法（Sliding Sketch）について、見積もりの誤差を小さくする方法を提案した。" },
         { period: "2019 – 2023", org: "電気通信大学 情報理工学域 卒業", body: "卒業研究では、2 つのデータの集まりがどれだけ似ているかを素早く見積もる手法（Min-Hash）を扱った。中身が増えたり減ったりするデータでも、少ないメモリで使えるようにした。" },
+        { period: "2009 – 2013", org: "駒澤大学 経済学部 経済学科 卒業" },
       ],
     },
     publications: {
@@ -124,6 +125,7 @@ export const content: Record<Lang, Content> = {
       items: [
         { period: "2023 – 2025", org: "M.Eng., The University of Electro-Communications", body: "Researched sketches: compact summaries that count huge, never-ending data such as sensor readings and access logs without storing all of it. I proposed ways to reduce the error of Sliding Sketch, an existing method that estimates how many times an item appeared in the most recent time window." },
         { period: "2019 – 2023", org: "B.Eng., The University of Electro-Communications", body: "My thesis was on Min-Hash, a technique for quickly estimating how similar two collections of data are. I made it work with less memory even when items are added and removed." },
+        { period: "2009 – 2013", org: "B.Econ., Komazawa University" },
       ],
     },
     publications: {
