@@ -17,18 +17,6 @@ const c = content[Astro.props.lang];
     <p>{c.hero.lead}</p>
   </header>
 
-  <section>
-    <h2>{c.strengths.heading}</h2>
-    <div class="cards">
-      {c.strengths.items.map((s) => (
-        <article>
-          <h3>{s.title}</h3>
-          <p>{s.body}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
   {[c.career, { heading: c.education.heading, jobs: c.education.items }].map((block) => (
     <section>
       <h2>{block.heading}</h2>
@@ -118,20 +106,6 @@ const c = content[Astro.props.lang];
     border-bottom: 1px solid var(--line);
     padding-bottom: 4px;
   }
-  h3 {
-    margin: 0 0 4px;
-    font-size: 1rem;
-  }
-  .cards {
-    display: grid;
-    gap: 12px;
-  }
-  .cards article {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 12px 16px;
-  }
-  .cards p,
   .list p,
   .timeline p {
     margin: 0;
