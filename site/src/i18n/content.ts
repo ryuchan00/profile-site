@@ -78,7 +78,7 @@ export const content: Record<Lang, Content> = {
         { name: "AWS", items: "ECS Fargate, ALB, Aurora, ElastiCache, CloudFront, S3, Lambda, Route 53, Bedrock" },
         { name: "IaC / CI", items: "Terraform, GitHub Actions, Docker" },
         { name: "言語", items: "C#, Ruby, PHP, C++, Go, Rust, Python" },
-        { name: "テスト", items: "xUnit, RSpec, E2E（スモークテスト）" },
+        { name: "テスト", items: "xUnit, RSpec, Hurl" },
       ],
     },
     certs: {
