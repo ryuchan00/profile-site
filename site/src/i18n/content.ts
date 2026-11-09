@@ -26,12 +26,12 @@ const FIT2024 = "https://www.ieice.org/publications/conference-FIT-DVDs/FIT2024/
 export const content: Record<Lang, Content> = {
   ja: {
     meta: {
-      title: "山川 竜太郎",
-      description: "ゲーム会社でインフラとアプリケーションを担うエンジニア、山川 竜太郎の経歴と作ったもの。",
+      title: "Ryutaro Yamakawa",
+      description: "ゲーム会社でインフラとアプリケーションを担うエンジニア、Ryutaro Yamakawa の経歴と作ったもの。",
     },
     nav: { otherLang: { label: "English", href: "/en/" } },
     hero: {
-      name: "山川 竜太郎",
+      name: "Ryutaro Yamakawa",
       role: "Software Engineer",
       lead: "ゲーム会社で、AWS のインフラとアプリケーションの両方を少人数で担っています。先に自分で問題を解き、仕組みにして、チームが使える形で渡すのが得意です。",
     },
